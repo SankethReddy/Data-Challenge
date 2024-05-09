@@ -1,0 +1,5 @@
+Field_Name Data_Type Nullability date_standardization
+id Integer true
+
+member_id Integer true
+loan_amnt Integer false
