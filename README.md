@@ -22,10 +22,10 @@ The "src" folder has the CSV files, schema .txt files, and the Python source cod
 
 ### output_files folder
   - The "LoanStats_securev1_2018Q4.parquet" file can be created from these file pairs:
-        - "LoanStats_securev1_2018Q4.csv" and "LoanStats_securev1_2018Q4 - Developer Supplied Schema.txt"
-        - "LoanStats_securev1_2018Q4.csv" and "LoanStats_securev1_2018Q4 - Developer Supplied Schema - Missing open_il_6m Column in Schema - Matching with CSV Data.txt"
-        - "LoanStats_securev1_2018Q4.csv" and "LoanStats_securev1_2018Q4 - Developer Supplied Schema - Missing Columns in Schema.txt"
-        - "LoanStats_securev1_2018Q4.csv" and "LoanStats_securev1_2018Q4 - Developer Supplied Schema - One Column.txt"
-        - "LoanStats_securev1_2018Q4.csv" and "LoanStats_securev1_2018Q4 - Developer Supplied Schema - Three Columns.txt"
+    - "LoanStats_securev1_2018Q4.csv" and "LoanStats_securev1_2018Q4 - Developer Supplied Schema.txt"
+    - "LoanStats_securev1_2018Q4.csv" and "LoanStats_securev1_2018Q4 - Developer Supplied Schema - Missing open_il_6m Column in Schema - Matching with CSV Data.txt"
+    - "LoanStats_securev1_2018Q4.csv" and "LoanStats_securev1_2018Q4 - Developer Supplied Schema - Missing Columns in Schema.txt"
+    - "LoanStats_securev1_2018Q4.csv" and "LoanStats_securev1_2018Q4 - Developer Supplied Schema - One Column.txt"
+    - "LoanStats_securev1_2018Q4.csv" and "LoanStats_securev1_2018Q4 - Developer Supplied Schema - Three Columns.txt"
   - The "LoanStats_securev1_2018Q4 - No Header.parquet" file can be created from these file pairs:
-        - "LoanStats_securev1_2018Q4 - No Header.csv" and "LoanStats_securev1_2018Q4 - Developer Supplied Schema - Missing open_il_6m Column in Schema - Matching with CSV Data.txt"
+    - "LoanStats_securev1_2018Q4 - No Header.csv" and "LoanStats_securev1_2018Q4 - Developer Supplied Schema - Missing open_il_6m Column in Schema - Matching with CSV Data.txt"
