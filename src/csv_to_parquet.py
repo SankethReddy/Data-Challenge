@@ -2,6 +2,7 @@
 ## csv_to_parquet.py file has the code that reads, processes, and transforms CSV files and uploads them to Parquet tables
 import warnings
 warnings.filterwarnings("ignore")
+from pyspark.sql import SparkSession
 import pandas as pd
 from datetime import datetime
 import os
@@ -97,11 +98,15 @@ def parse_schema_txt_file(txt):
 
 ## get_column_names_new_schema_original_file_content takes in the .csv file and the schema dictionary and returns the Column Names, New Schema, and Original File Content
 def get_column_names_new_schema_original_file_content(file, schema):
-    with open(file) as csv_file: ## Reading the csv like this because there could be rows that are empty or rows with text that are not part of the raw data
-        reader_obj = csv.reader(csv_file)
-        nested_lst = []
-        for row in reader_obj:
-            nested_lst.append(row)
+    spark = SparkSession.builder.appName("csv_to_parquet").getOrCreate() ## Incorporating PySpark to read in .csv files to account for massive data inputs
+    spark_file = spark.read.csv(file) 
+    spark_file_rdd = spark_file.rdd ## Converting Spark file to RDD because there could be lines with empty data or lines that are not relevant to the data
+    nested_lst = []
+    for i in spark_file_rdd.collect(): ## Converting  RDD to a list object and reading in data like this
+        i = list(i)
+        new_i = ['' if v is None else v for v in i]
+        nested_lst.append(new_i)  
+        
     columns = []
     for i in nested_lst:
         if i.count('') == 0: ## If every column has a value in it, the first row where this takes place will be the headers (column names)
